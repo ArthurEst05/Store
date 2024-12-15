@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap"
       rel="stylesheet"
     />
+    <script src="./javascript/script.js"></script>
   </head>
   <body>
     <div class="hall">
@@ -42,9 +43,78 @@
           <a href="">SALE</a>
         </div>
         <div class="right" id="right">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <i class="fa-regular fa-user"></i>
-          <i class="fa-solid fa-cart-shopping"></i>
+          <i
+            class="fa-solid fa-magnifying-glass"
+            id="search-btn"
+            onclick="toogleSearch()"
+          ></i>
+          <div class="overlay" id="overlay">
+            <input
+              type="text"
+              id="centeredSearchInput"
+              class="centered-search-input"
+              placeholder="Buscar"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass"
+              id="search-btn-overlay"
+              onclick="Search()"
+            ></i>
+            <i
+              class="fa-solid fa-x"
+              id="close-icon"
+              onclick="toogleClose()"
+            ></i>
+          </div>
+
+          <i
+            class="fa-regular fa-user"
+            id="user-btn"
+            onmouseenter="showPopup()"
+            onmouseleave="hidePopup()"
+          ></i>
+
+          <div
+            class="popup"
+            id="userPopup"
+            onmouseenter="showPopup()"
+            onmouseleave="hidePopup()"
+          >
+            <div class="popup-content" id="popup-content">
+              <h3>Informações do Usuário</h3>
+              <hr />
+              <a href="" class="links-pop"
+                ><p><i class="fa-solid fa-user"></i> Minha conta</p></a
+              >
+              <a href="" class="links-pop"
+                ><p><i class="fa-solid fa-box"></i> Meus pedidos</p></a
+              >
+              <a href="" class="links-pop"
+                ><p><i class="fa-regular fa-heart"></i> Desejos</p></a
+              >
+              <a href="" class="links-pop"
+                ><p><i class="fa-solid fa-truck"></i> Rastrear Pedido</p></a
+              >
+            </div>
+          </div>
+
+          <i
+            class="fa-solid fa-cart-shopping"
+            id="carrinho-btn"
+            onclick="toogleShow()"
+          ></i>
+          <div id="carrinho">
+            <div id="cabecalho-carrinho">
+              <h4>Carrinho de compras</h4>
+              <p>(0 itens)</p>
+              <i
+                class="fa-solid fa-x"
+                id="close-icon-carrinho"
+                onclick="toogleCloseCarrinho()"
+              ></i>
+            </div>
+            <div id="carrinho-conteudo"><p>Seu carrinho está vazio</p></div>
+          </div>
         </div>
       </div>
     </header>
